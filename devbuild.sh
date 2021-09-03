@@ -65,8 +65,13 @@ if [[ ! -z $opt ]]; then
       usage
       exit 0
       ;;
-    *)
+    intel|gnu)
      COMPILER="${opt}"
+      ;;
+    *)
+     echo -e "\n        unknown option: ${opt}"
+     usage
+     exit 0
       ;;
   esac
 fi
