@@ -53,10 +53,11 @@ usage () {
   echo "See User's Guide for detailed build instructions"
 }
 
+opt=${1:-""}
 COMPILER="intel"
 KJET=""
-if [[ ! -z $1 ]]; then
-  case $1 in
+if [[ ! -z $opt ]]; then
+  case $opt in
     kjet|kJet|KJET|Kjet|kJET)
       KJET="kjet"
        ;;
@@ -65,7 +66,7 @@ if [[ ! -z $1 ]]; then
       exit 0
       ;;
     *)
-     COMPILER="${1}"
+     COMPILER="${opt}"
       ;;
   esac
 fi
