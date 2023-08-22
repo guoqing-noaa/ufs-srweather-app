@@ -29,6 +29,8 @@ if __name__ == '__main__':
     ARGS = manic.checkout.commandline_arguments()
     try:
         RET_STATUS, _ = manic.checkout.main(ARGS)
+        if os.path.isfile('manage_externals/bridge_loan.sh'):
+            os.system('manage_externals/bridge_loan.sh')
         if os.path.isfile('regional_workflow/Init.sh'):
             os.system('regional_workflow/Init.sh')
         sys.exit(RET_STATUS)
